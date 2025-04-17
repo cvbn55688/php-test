@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>註冊</title>
+    <link rel="stylesheet" href="register.css" />
+    <style>
+      .back-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+      .back-button:hover {
+        background-color: black;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: black;
+      }
+      .star {
+        position: fixed;
+        width: 2px;
+        height: 2px;
+        background: white;
+        animation: move 2s linear infinite;
+        z-index: 0;
+      }
+      @keyframes move {
+        0% {
+          transform: translateZ(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateZ(-1000px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="D:\AlexHsu\Desktop\css_videoBackground\videos\video.html"
+      class="back-button"
+      >⬅︎ 返回</a
+    >
+    <!-- 星空背景 -->
+    <script>
+      for (let i = 0; i < 500; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        document.body.appendChild(star);
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      }
+    </script>
+    <!-- 頁面主內容 -->
+    <div class="content">
+      <header class="header">
+        <div class="logo">九大行星</div>
+      </header>
+      <div class="form-container">
+        <h1>註冊</h1>
+        <form action="register.php" method="POST">
+          <label for="username">帳號：</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">密碼：</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">確認</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

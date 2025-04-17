@@ -9,8 +9,8 @@ try {
     die("資料庫連線失敗：" . $e->getMessage()); 
 } 
 
-$username = $_POST['username']?? '';
-$password = $_POST['password'] ?? ''; 
+$username = $_POST['username'];
+$password = $_POST['password']; 
 
 if ($username && $password) {
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = ?");

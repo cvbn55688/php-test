@@ -18,5 +18,7 @@ sudo mkdir -p /var/run/mysqld
 sudo chown mysql:mysql /var/run/mysqld
 sudo chmod 755 /var/run/mysqld
 
+php -S localhost:8000
+
 
 ```
